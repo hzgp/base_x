@@ -1,0 +1,26 @@
+apply plugin: 'maven'
+
+configurations {
+  deployerJars
+}
+
+repositories {
+  mavenCentral()
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "http://192.168.1.9:8081/nexus/content/repositories/jx_baseframe/") {
+        authentication(userName: "admin", password: "admin123")
+      }
+      pom.project {
+        version '1.0.1'
+        artifactId 'jxbaseframe'
+        groupId 'com.jxkj.baseframe'
+        packaging 'aar'
+        description 'library for android'
+      }
+    }
+  }
+}

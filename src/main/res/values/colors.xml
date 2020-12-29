@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    /*ToolBar*/
+    <color name="colorPrimary">@color/theme</color>
+    <color name="colorPrimaryDark">@color/theme</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="toolbar_button">#000000</color>
+    <color name="card_view_bg">#FFFFFF</color>
+    <color name="item_title">#19191B</color>
+
+    <!--Picker-->
+    <color name="picker_pager_bg">#CA000000</color>
+    <color name="picker_selected_bg">#44000000</color>
+    <color name="picker_black_40">#282828</color>
+    <color name="picker_common_primary">#f3f3f3</color>
+    <color name="picker_text_40">#282828</color>
+    <color name="picker_text_80">#505050</color>
+    <color name="picker_text_120">#787878</color>
+    <color name="picker_item_photo_border_selected">#ff99cc00</color>
+    <color name="picker_menu_unable">#ff99cc00</color>
+    <color name="picker_menu_enable">#e2369615</color>
+    <color name="picker_item_photo_border_n">#33ffffff</color>
+</resources>

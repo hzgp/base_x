@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jxkj.utils.statusBar.MultipleStatusView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_multiple_status_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</com.jxkj.utils.statusBar.MultipleStatusView>

@@ -1,0 +1,79 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //base
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["design"]
+    //ui
+    implementation rootProject.ext.dependencies["fragmentation"]
+    implementation rootProject.ext.dependencies["fragmentation-swipeback"]
+    implementation rootProject.ext.dependencies["statusbar"]
+    implementation rootProject.ext.dependencies["tablayout"]
+    //net
+    implementation rootProject.ext.dependencies["gson"]
+    implementation rootProject.ext.dependencies["okhttp"]
+    implementation rootProject.ext.dependencies["logging-interceptor"]
+    implementation rootProject.ext.dependencies["retrofit"]
+    implementation rootProject.ext.dependencies["converter-gson"]
+    implementation rootProject.ext.dependencies["adapter-rxjava2"]
+
+    //rx
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["rxbinding"]
+    //di
+    implementation rootProject.ext.dependencies["fastjson"]
+    implementation rootProject.ext.dependencies["dagger2"]
+    annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
+    implementation rootProject.ext.dependencies["dagger2-android"]
+    implementation rootProject.ext.dependencies["dagger2-android-support"]
+    annotationProcessor rootProject.ext.dependencies["dagger2-android-processor"]
+    implementation rootProject.ext.dependencies["javax_annotation"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["glide_okhttp3"]
+    annotationProcessor rootProject.ext.dependencies["glide_compiler"]
+    //tool
+    implementation rootProject.ext.dependencies["eventbus"]
+    //implementation project(':jxutils')
+    implementation rootProject.ext.dependencies["jxutils-x"]
+}
+publish {
+    userOrg = 'zhujiangbin'
+    groupId = 'com.jxkj.baseframe'
+    artifactId = 'jxbaseframe'
+    publishVersion = '1.0.1'
+    desc = '适配Anroid X'
+    website = 'https://github.com/zhujiangbin/jxbaseframe'//网站，不重要
+}
+
+apply from: 'nexus_maven_push.gradle'
