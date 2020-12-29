@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -66,14 +65,6 @@ dependencies {
     implementation rootProject.ext.dependencies["eventbus"]
     //implementation project(':jxutils')
     implementation rootProject.ext.dependencies["jxutils-x"]
-}
-publish {
-    userOrg = 'zhujiangbin'
-    groupId = 'com.jxkj.baseframe'
-    artifactId = 'jxbaseframe'
-    publishVersion = '1.0.1'
-    desc = '适配Anroid X'
-    website = 'https://github.com/zhujiangbin/jxbaseframe'//网站，不重要
 }
 
 apply from: 'nexus_maven_push.gradle'
