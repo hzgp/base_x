@@ -1,0 +1,26 @@
+apply plugin: 'maven'
+
+configurations {
+  deployerJars
+}
+
+repositories {
+  mavenCentral()
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "http://192.168.1.18:8081/nexus/content/repositories/base_kt/") {
+        authentication(userName: "admin", password: "admin123")
+      }
+      pom.project {
+        version '1.1.1'
+        artifactId 'base_kt'
+        groupId 'com.frame.base'
+        packaging 'aar'
+        description 'library for android'
+      }
+    }
+  }
+}

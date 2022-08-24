@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content">
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/recycler"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		/>
+	<LinearLayout
+		android:id="@+id/empty"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:gravity="center_horizontal"
+		android:paddingTop="@dimen/dp_40"
+		android:visibility="gone"
+		>
+		<ImageView
+			android:id="@+id/empty_icon"
+			android:layout_width="@dimen/dp_150"
+			android:layout_height="@dimen/dp_150"
+			android:src="@mipmap/ic_empty_data"
+			android:contentDescription="@null"/>
+        <TextView
+	        android:id="@+id/empty_notice"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="@dimen/text_14sp"
+	        android:textColor="@color/gray_3"/>
+	</LinearLayout>
+</FrameLayout>
